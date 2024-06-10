@@ -1,7 +1,8 @@
 import React from 'react'
+import MorseArea from './components/MorseArea'
 
 function App() {
-  return <div className="App">works...</div>
+  return <MorseArea />
 }
 
 export default App
