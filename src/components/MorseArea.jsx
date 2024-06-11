@@ -12,7 +12,7 @@ const MorseArea = () => {
   } = useMorseCode()
 
   return (
-    <div className="w-full h-[100vh] flex justify-center items-center bg-black text-white">
+    <div className="w-full h-[100vh] flex justify-center items-center bg-black text-white select-none">
       <div className="flex flex-col items-center">
         <div className="w-[300px] h-[54px] mb-8 border-b-2 border-white border-solid text-[32px]">
           {translatedText} {morseCurrentState}
@@ -20,8 +20,8 @@ const MorseArea = () => {
 
         <div
           className={`w-[200px] h-[200px] rounded-3xl border-solid border-white border-4 cursor-pointer ${isPressed && 'opacity-[0.1] bg-gray-50'}`}
-          onMouseUp={onMouseUp}
-          onMouseDown={onMouseDown}
+          onPointerUp={onMouseUp}
+          onPointerDown={onMouseDown}
         />
 
         <button
