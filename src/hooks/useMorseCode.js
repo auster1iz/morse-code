@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   FIVE_HUNDRED_MILLISECONDS,
   TWO_HUNDRED_MILLISECONDS,
@@ -40,7 +40,7 @@ export function useMorseCode() {
     setMorseCurrentState('')
   }
 
-  useEffect(() => {
+  const translateMorseCode = useCallback(() => {
     clearTimeout(timer.current)
     timer.current = setTimeout(() => {
       const translatedLetter = MORSE_ALPHABET[morseCurrentState]
@@ -52,6 +52,10 @@ export function useMorseCode() {
       setMorseCurrentState('')
     }, FIVE_HUNDRED_MILLISECONDS)
   }, [morseCurrentState])
+
+  useEffect(() => {
+    translateMorseCode()
+  }, [translateMorseCode])
 
   return {
     isPressed,
