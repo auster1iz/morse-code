@@ -19,10 +19,12 @@ const MorseArea = () => {
         </div>
 
         <div
-          className={`w-[200px] h-[200px] rounded-3xl border-solid border-white border-4 cursor-pointer ${isPressed && 'opacity-[0.1] bg-gray-50'}`}
+          className={`flex justify-center items-center w-[200px] h-[200px] rounded-3xl border-solid border-white border-4 cursor-pointer ${isPressed && 'opacity-[0.1] bg-gray-50'}`}
           onPointerUp={onMouseUp}
           onPointerDown={onMouseDown}
-        />
+        >
+          PRESS
+        </div>
 
         <button
           onClick={clearText}
